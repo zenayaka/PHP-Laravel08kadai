@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['profix' => 'admin'], function() {
+    Route::get('news/create', 'Admin\NewsController@add');});
+    
+    Route::get('admin/profile/edit', 'Admin\ProfileController@add');
+    //adminは絶対なのか？adminて何？
+    Route::get('admin/profile/edit', 'Admin\ProfileController@edit');
+    
